@@ -1,4 +1,5 @@
 const mongoose=require('mongoose')
+const bcrypt=require('bcrypt')
 
 const userSchema=new mongoose.Schema({
     firstName:{
@@ -39,13 +40,22 @@ const userSchema=new mongoose.Schema({
 
     password:{
         type: String,
-        required: [true, "password should be provoded"],
+        required: [true, "password should be provided"],
         minlength: [6, "password should be minimum 6 character long"]
     }
 },{
     timestamps: true,
     versionKey: false
 });
+
+// why here beacuse here valdtions of mongoose doesn't exist 
+// data here directly goes to mongoDB
+
+userSchema.pre('save', async function(){
+    // here you can modify your user before it is saved in mongoDB
+    const hashedPassword=await bcrypt.hash(this.password,10)
+    this.password=hashedPassword
+})
 
 
 const User=mongoose.model("User",userSchema)
