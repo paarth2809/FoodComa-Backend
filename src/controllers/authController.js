@@ -32,7 +32,7 @@ async function login(req, res) {
             secure: COOKIE_SECURE,
             sameSite: "lax",
             domain: FRONTEND_URL,
-            maxAge: 7 * 24 * 60 * 60 * 1000
+            maxAge: 7 * 24 * 60 * 60 * 1000  // 7 days in milliseconds
         })
 
         return res.status(200).json({
