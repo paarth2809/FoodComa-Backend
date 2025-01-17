@@ -42,6 +42,7 @@ async function login(req, res) {
                 userRole: response.userRole,
                 userData: response.userData
             },
+            token: response.token,
             error: {}
         })
     } catch(error) {
