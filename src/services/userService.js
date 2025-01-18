@@ -1,6 +1,8 @@
 const { findUser, createUser } = require("../repositories/userRepository");
+const { createcart } = require('../repositories/cartRepository');
 
 async function registerUser(userDetails) {
+    console.log("Hitting service layer")
     // It will create a brand new user in the db
 
     // 1. We need to check if the user with this email and mobile number already exists or not
@@ -27,7 +29,9 @@ async function registerUser(userDetails) {
         throw {reason: 'Something went wrong, cannot create user', statusCode: 500}
     }
 
-    // 3. return the details of created user
+    await createcart(newUser._id);
+
+    // 3. retuern the details of created user
     return newUser;
 }
 
