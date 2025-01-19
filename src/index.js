@@ -8,7 +8,7 @@ const userRouter = require('./routes/userRoute');
 const cartRouter = require('./routes/cartRoute');
 const authRouter = require('./routes/authRoute');
 const productRouter = require('./routes/productRoute');
-const orderRouter = require('./routes/orderRoutes');
+const orderRouter = require('./routes/orderRoute');
 // const User = require('./schema/userSchema');
 
 const app = express();
