@@ -5,19 +5,19 @@ const userSchema=new mongoose.Schema({
     firstName:{
         type: String,
         required: [true, "First name is required"],
-        minlength: [5, "First name must be 5 character long"],
+        minlength: [5, "First name must be at least 5 character long"],
         lowercase: true,
         trim: true,  // if user gives extra spaces, it will automatically remove it
-        maxlength: [20, "Firs name should be less than or equal to 20 characters"]
+        maxlength: [20, "First name should be less than or equal to 20 characters"]
     },
 
     lastName:{
         type: String,
-        required: [true, "First name is required"],
-        minlength: [5, "First name must be 5 character long"],
+        required: [true, "Last name is required"],
+        minlength: [5, "Last name must be 5 character long"],
         lowercase: true,
         trim: true,  // if user gives extra spaces, it will automatically remove it
-        maxlength: [20, "First name should be less than or equal to 20 characters"]
+        maxlength: [20, "Last name should be less than or equal to 20 characters"]
     },
 
     mobileNumber:{

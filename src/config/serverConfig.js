@@ -13,3 +13,6 @@ module.exports = {
     FRONTEND_URL: process.env.FRONTEND_URL,
     COOKIE_SECURE: process.env.COOKIE_SECURE,
 }
+
+// paarthmonga28
+// mg0Kft3RHbSolc5o

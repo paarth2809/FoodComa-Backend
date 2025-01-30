@@ -7,3 +7,5 @@ class AppError extends Error {
 }
 
 module.exports = AppError;
+
+// generic error file used to create dedicated error files
